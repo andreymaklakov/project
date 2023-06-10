@@ -1,5 +1,7 @@
 {
   "Привет всем!!": "Hello everybody!!",
   "Перевод": "Translate",
-  "Язык": "Русский"
+  "Язык": "Русский",
+  "toggle": "toggle",
+  "Loading...": "Loading..."
 }
