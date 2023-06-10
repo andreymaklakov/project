@@ -1,0 +1,22 @@
+@import "./variables/global.scss";
+@import "./reset.scss";
+@import "./themes/light.scss";
+@import "./themes/dark.scss";
+
+.app {
+  font: var(--fontM);
+
+  background-color: var(--bgColor);
+  color: var(--primaryColor);
+
+  min-height: 100vh;
+}
+
+.contentPage {
+  display: flex;
+}
+
+.pageWrapper {
+  flex-grow: 1;
+  padding: 20px;
+}

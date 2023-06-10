@@ -6,6 +6,7 @@ import { BuildOptions } from "./types/config";
 
 export function buildPlugins({
   paths,
+  isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -16,5 +17,11 @@ export function buildPlugins({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
+    //new webpack.DefinePlugin to use variables like isDev in our app components
+    new webpack.HotModuleReplacementPlugin(),
+    //HotModuleReplacementPlugin for updating app when change code without page reload
   ];
 }
