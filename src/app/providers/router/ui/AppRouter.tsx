@@ -10,7 +10,7 @@ export const AppRouter: FC = () => {
           <Route
             key={path}
             path={path}
-            element={<div className="pageWrapper">{element}</div>}
+            element={<div className="page-wrapper">{element}</div>}
           />
         ))}
       </Routes>

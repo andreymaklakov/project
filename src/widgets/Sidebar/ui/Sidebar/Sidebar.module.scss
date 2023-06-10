@@ -1,13 +1,13 @@
 .Sidebar {
-  width: var(--sidebarWidth);
-  height: calc(100vh - var(--navbarHeight));
-  background-color: var(--invertedBgColor);
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--inverted-bg-color);
   position: relative;
   transition: width 0.3s ease;
 }
 
 .collapsed {
-  width: var(--sidebarWidthCollapsed);
+  width: var(--sidebar-width-collapsed);
 }
 
 .switchers {
@@ -20,5 +20,5 @@
 }
 
 .lang {
-  color: var(--invertedPrimaryColor);
+  color: var(--inverted-primary-color);
 }

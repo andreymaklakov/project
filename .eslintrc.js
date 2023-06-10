@@ -11,6 +11,7 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:i18next/recommended",
   ],
   overrides: [],
   parser: "@typescript-eslint/parser",
@@ -18,7 +19,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react"],
+  plugins: ["react", "i18next"],
   rules: {
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     semi: [2, "always"],
@@ -26,5 +27,6 @@ module.exports = {
     "@typescript-eslint/no-empty-function": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "i18next/no-literal-string": [2, { markupOnly: true }],
   },
 };

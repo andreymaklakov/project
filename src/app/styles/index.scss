@@ -1,22 +1,21 @@
-@import "./variables/global.scss";
-@import "./reset.scss";
-@import "./themes/light.scss";
-@import "./themes/dark.scss";
+@import "./variables/global";
+@import "./reset";
+@import "./themes/light";
+@import "./themes/dark";
 
 .app {
-  font: var(--fontM);
-
-  background-color: var(--bgColor);
-  color: var(--primaryColor);
-
+  font: var(--font-m);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
   min-height: 100vh;
 }
 
-.contentPage {
+
+.content-page {
   display: flex;
 }
 
-.pageWrapper {
+.page-wrapper {
   flex-grow: 1;
   padding: 20px;
 }
