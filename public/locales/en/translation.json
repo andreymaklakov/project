@@ -3,5 +3,9 @@
   "Перевод": "Translate",
   "Язык": "Русский",
   "toggle": "toggle",
-  "Loading...": "Loading..."
+  "Loading...": "Loading...",
+  "Page not found": "Page not found",
+  "An error has occurred": "An error has occurred",
+  "Reload page": "Reload page",
+  "Throw Error": "Throw Error"
 }

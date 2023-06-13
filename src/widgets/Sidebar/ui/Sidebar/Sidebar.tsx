@@ -1,8 +1,8 @@
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { LangSwitcher } from "widgets/LangSwitcher/LangSwitcher";
+import { ThemeSwitcher } from "features/ThemeSwitcher";
+import { LangSwitcher } from "features/LangSwitcher/LangSwitcher";
 
 import { classNames } from "shared/lib/classNames/classNames";
 

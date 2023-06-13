@@ -1,4 +1,5 @@
 {
+  "An error has occurred": "An error has occurred",
   "Loading": {
     "": {
       "": {
@@ -6,6 +7,10 @@
       }
     }
   },
+  "Page not found": "Page not found",
+  "Reload page": "Reload page",
+  "Throw Error": "Throw Error",
+  "error": "error",
   "toggle": "toggle",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
