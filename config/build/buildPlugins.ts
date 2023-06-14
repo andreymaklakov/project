@@ -1,6 +1,8 @@
+import webpack from "webpack";
+
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import webpack from "webpack";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 import { BuildOptions } from "./types/config";
 
@@ -17,11 +19,18 @@ export function buildPlugins({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
+
+    //new webpack.DefinePlugin to use variables like isDev in our app components
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    //new webpack.DefinePlugin to use variables like isDev in our app components
-    new webpack.HotModuleReplacementPlugin(),
+
     //HotModuleReplacementPlugin for updating app when change code without page reload
+    new webpack.HotModuleReplacementPlugin(),
+
+    new BundleAnalyzerPlugin({
+      analyzerPort: 3333,
+      openAnalyzer: false,
+    }),
   ];
 }
