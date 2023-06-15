@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { Button } from "shared/ui/Button/Button";
 
 import styles from "./PageError.module.scss";
 
@@ -19,7 +20,7 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
   return (
     <div className={cls}>
       <p>{t("An error has occurred")}</p>
-      <button onClick={reloadPage}>{t("Reload page")}</button>
+      <Button onClick={reloadPage}>{t("Reload page")}</Button>
     </div>
   );
 };

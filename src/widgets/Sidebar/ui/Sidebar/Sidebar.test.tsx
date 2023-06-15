@@ -1,5 +1,4 @@
-/* eslint-disable i18next/no-literal-string */
-import { screen, fireEvent } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithTranslation } from "shared/lib/tests/renderWithTranslation/renderWithTranslation";
