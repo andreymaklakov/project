@@ -4,7 +4,7 @@ import { PartialStoryFn } from "@storybook/types";
 import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 
 export default function ThemeDecorator(theme: Theme) {
-  return function (Story: PartialStoryFn<ReactRenderer>) {
+  return function fn(Story: PartialStoryFn<ReactRenderer>) {
     return (
       <div className={`app ${theme}`}>
         <ThemeProvider>
