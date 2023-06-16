@@ -10,7 +10,7 @@ export function buildPlugins({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -24,13 +24,19 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-
-    //HotModuleReplacementPlugin for updating app when change code without page reload
-    new webpack.HotModuleReplacementPlugin(),
-
-    new BundleAnalyzerPlugin({
-      analyzerPort: 3333,
-      openAnalyzer: false,
-    }),
   ];
+
+  if (isDev) {
+    plugins.push(
+      //HotModuleReplacementPlugin for updating app when change code without page reload
+      new webpack.HotModuleReplacementPlugin(),
+
+      new BundleAnalyzerPlugin({
+        analyzerPort: 3333,
+        openAnalyzer: false,
+      })
+    );
+  }
+
+  return plugins;
 }
