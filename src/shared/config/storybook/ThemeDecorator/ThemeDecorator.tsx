@@ -3,8 +3,8 @@ import { PartialStoryFn } from "@storybook/types";
 
 import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 
-export const ThemeDecorator =
-  (theme: Theme) => (Story: PartialStoryFn<ReactRenderer>) => {
+export function ThemeDecorator(theme: Theme) {
+  return function (Story: PartialStoryFn<ReactRenderer>) {
     return (
       <div className={`app ${theme}`}>
         <ThemeProvider>
@@ -13,3 +13,4 @@ export const ThemeDecorator =
       </div>
     );
   };
+}
