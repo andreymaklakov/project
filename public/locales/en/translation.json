@@ -1,7 +1,7 @@
 {
   "Привет всем!!": "Hello everybody!!",
   "Перевод": "Translate",
-  "Язык": "Русский",
+  "Language": "Русский",
   "toggle": "toggle",
   "Loading...": "Loading...",
   "Page not found": "Page not found",
@@ -9,5 +9,6 @@
   "Reload page": "Reload page",
   "Throw Error": "Throw Error",
   "Main": "Main",
-  "About": "About"
+  "About": "About",
+  "Ln": "Ru"
 }
