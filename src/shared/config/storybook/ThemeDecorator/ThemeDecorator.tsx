@@ -6,11 +6,11 @@ import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 export default function ThemeDecorator(theme: Theme) {
   return function fn(Story: PartialStoryFn<ReactRenderer>) {
     return (
-      <div className={`app ${theme}`}>
-        <ThemeProvider>
+      <ThemeProvider initialTheme={theme}>
+        <div className={`app ${theme}`}>
           <Story />
-        </ThemeProvider>
-      </div>
+        </div>
+      </ThemeProvider>
     );
   };
 }

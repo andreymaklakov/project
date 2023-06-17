@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { FC } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Button, ButtonVariant } from "shared/ui/Button/Button";
 
 interface LangSwitcherProps {
   className?: string;
@@ -19,7 +19,11 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className, short }) => {
   const cls = classNames("", {}, [className]);
 
   return (
-    <Button className={cls} theme={ButtonTheme.CLEAR} onClick={toggleLanguage}>
+    <Button
+      className={cls}
+      variant={ButtonVariant.CLEAR}
+      onClick={toggleLanguage}
+    >
       {t(short ? "Ln" : "Language")}
     </Button>
   );

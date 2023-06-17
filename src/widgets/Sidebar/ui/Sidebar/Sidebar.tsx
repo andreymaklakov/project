@@ -1,12 +1,12 @@
-import { FC, Fragment, useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher/LangSwitcher";
 
-import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
+import { Button, ButtonSize, ButtonVariant } from "shared/ui/Button/Button";
 import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { AppLink, AppLinkVariant } from "shared/ui/AppLink/AppLink";
 import { RoutePaths } from "shared/config/routeConfig/routeConfig";
 import AboutIcon from "shared/assets/icons/about.svg";
 import MainIcon from "shared/assets/icons/main.svg";
@@ -36,7 +36,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         data-testid="sidebar-toggle"
         className={styles.collapseBtn}
         onClick={toggleCollapsed}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
+        variant={ButtonVariant.BACKGROUND_INVERTED}
         square
         size={ButtonSize.L}
       >
@@ -45,7 +45,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
 
       <div className={styles.items}>
         <AppLink
-          theme={AppLinkTheme.INVERTED_PRIMARY}
+          variant={AppLinkVariant.INVERTED_PRIMARY}
           to={RoutePaths.main}
           className={styles.item}
         >
@@ -54,7 +54,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         </AppLink>
 
         <AppLink
-          theme={AppLinkTheme.INVERTED_PRIMARY}
+          variant={AppLinkVariant.INVERTED_PRIMARY}
           to={RoutePaths.about}
           className={styles.item}
         >

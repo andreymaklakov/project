@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { Button, ButtonVariant } from "shared/ui/Button/Button";
+import { Modal } from "shared/ui/Modal/Modal";
 
 import styles from "./Navbar.module.scss";
 
@@ -10,13 +12,31 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
+  const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
+
   const cls = classNames(styles.Navbar, {}, [className]);
 
   const { t } = useTranslation();
 
+  const toggleOpenModal = useCallback(() => {
+    setIsOpenAuthModal((prevState) => !prevState);
+  }, []);
+
   return (
     <div className={cls}>
-      <div className={styles.links}>/</div>
+      <Button
+        variant={ButtonVariant.CLEAR_INVERTED}
+        className={styles.links}
+        onClick={toggleOpenModal}
+      >
+        {t("Log In")}
+      </Button>
+
+      {/* eslint-disable-next-line i18next/no-literal-string */}
+      <Modal isOpen={isOpenAuthModal} onClose={toggleOpenModal}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae magni
+        distinctio mollitia ea error corrupti optio, aut soluta sunt ex?
+      </Modal>
     </div>
   );
 };

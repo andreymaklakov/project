@@ -28,7 +28,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "i18next"],
+  plugins: ["react", "i18next", "react-hooks"],
   rules: {
     quotes: [
       "error",
@@ -49,5 +49,7 @@ module.exports = {
         ignoreAttribute: ["to", "data-testid"],
       },
     ],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
   },
 };

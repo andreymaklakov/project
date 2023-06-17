@@ -8,8 +8,6 @@ import { useTheme } from "./providers/ThemeProvider";
 
 import { classNames } from "shared/lib/classNames/classNames";
 
-import "./styles/index.scss";
-
 const App = () => {
   const { theme } = useTheme();
 
@@ -19,6 +17,7 @@ const App = () => {
     <div className={cls}>
       <Suspense fallback="">
         <Navbar />
+
         <div className="content-page">
           <Sidebar />
 
