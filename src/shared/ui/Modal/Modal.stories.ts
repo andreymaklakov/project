@@ -22,12 +22,12 @@ export const Light: Story = {
   },
 };
 
-export const Dark: Story = {
-  args: {
-    isOpen: true,
-    children:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae magni distinctio mollitia ea error corrupti optio, aut soluta sunt ex?",
-  },
-};
+// export const Dark: Story = {
+//   args: {
+//     isOpen: true,
+//     children:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae magni distinctio mollitia ea error corrupti optio, aut soluta sunt ex?",
+//   },
+// };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Dark.decorators = [ThemeDecorator(Theme.DARK)];
