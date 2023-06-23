@@ -4,14 +4,11 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 
 import { AppRouter } from "./providers/router";
-import { useTheme } from "./providers/ThemeProvider";
 
 import { classNames } from "shared/lib/classNames/classNames";
 
 const App = () => {
-  const { theme } = useTheme();
-
-  const cls = classNames("app", {}, [theme]);
+  const cls = classNames("app", {}, []);
 
   return (
     <div className={cls}>
