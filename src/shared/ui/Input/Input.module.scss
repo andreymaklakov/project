@@ -1,0 +1,18 @@
+.InputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .placeholder{
+    width: 100%;
+  }
+
+  input {
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: 100%;
+    color: var(--primary-color);
+    padding: 0 8px;
+  }
+}

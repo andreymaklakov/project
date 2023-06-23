@@ -9,6 +9,7 @@ interface ModalProps {
   className?: string;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 200;
@@ -17,14 +18,17 @@ export const Modal: FC<ModalProps> = ({
   className,
   children,
   isOpen,
+  lazy = false,
   onClose,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
   const mods: Record<string, boolean> = {
-    [styles.opened]: isOpen,
+    [styles.opened]: isOpening,
     [styles.isClosing]: isClosing,
   };
   const cls = classNames(styles.Modal, mods, [className]);
@@ -41,6 +45,16 @@ export const Modal: FC<ModalProps> = ({
     }
   }, [onClose]);
 
+  const handleOpen = useCallback(() => {
+    if (isOpen) {
+      setIsMounted(true);
+
+      timeRef.current = setTimeout(() => {
+        setIsOpening(true);
+      });
+    }
+  }, [isOpen]);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -49,6 +63,16 @@ export const Modal: FC<ModalProps> = ({
     },
     [handleClose]
   );
+
+  useEffect(() => {
+    handleOpen();
+
+    return () => {
+      clearTimeout(timeRef.current);
+      setIsMounted(false);
+      setIsOpening(false);
+    };
+  }, [handleOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -61,6 +85,10 @@ export const Modal: FC<ModalProps> = ({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, handleKeyDown]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

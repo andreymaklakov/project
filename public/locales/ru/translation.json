@@ -11,5 +11,7 @@
   "Main": "Главная",
   "About": "О сайте",
   "Ln": "En",
-  "Log In": "Войти"
+  "Log In": "Войти",
+  "Enter username": "Введите имя",
+  "Enter password": "Введите пароль"
 }
