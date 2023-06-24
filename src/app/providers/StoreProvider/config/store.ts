@@ -1,13 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import { counterReducer } from "entitiess/Counter";
 import { userReducer } from "entitiess/User";
+import { loginReducer } from "features/AuthByUsername";
 
 import { StateSchema } from "./StateSchema";
 
 const rootReducer = combineReducers<StateSchema>({
-  counter: counterReducer,
   user: userReducer,
+  login: loginReducer,
 });
 
 export function createReduxStore(initialState?: StateSchema) {
@@ -18,7 +18,7 @@ export function createReduxStore(initialState?: StateSchema) {
   });
 }
 
-// export const store = createReduxStore();
+export const store = createReduxStore();
 
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

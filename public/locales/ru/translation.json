@@ -13,5 +13,8 @@
   "Ln": "En",
   "Log In": "Войти",
   "Enter username": "Введите имя",
-  "Enter password": "Введите пароль"
+  "Enter password": "Введите пароль",
+  "Authorization form": "Форма авторизации",
+  "Login or password is incorrect": "Неверный логин или пароль",
+  "Log Out": "Выйти"
 }

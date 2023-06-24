@@ -31,8 +31,10 @@ server.post("/login", (req, res) => {
       (user) => user.username === username && user.password === password
     );
 
+    const { password: userPassword, ...otherData } = userFromBd;
+
     if (userFromBd) {
-      return res.json(userFromBd);
+      return res.json(otherData);
     }
 
     return res.status(403).json({ message: "User not found" });

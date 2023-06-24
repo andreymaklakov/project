@@ -12,12 +12,16 @@ interface LoginModalProps {
   onClose: () => void;
 }
 
-export const LoginModal: FC<LoginModalProps> = ({ className, ...props }) => {
+export const LoginModal: FC<LoginModalProps> = ({
+  className,
+  onClose,
+  ...props
+}) => {
   const cls = classNames(styles.LoginModal, {}, [className]);
 
   return (
-    <Modal lazy {...props} className={cls}>
-      <LoginForm />
+    <Modal onClose={onClose} lazy {...props} className={cls}>
+      <LoginForm onClose={onClose} />
     </Modal>
   );
 };

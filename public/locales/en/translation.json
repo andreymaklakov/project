@@ -13,5 +13,8 @@
   "Ln": "Ru",
   "Log In": "Log in",
   "Enter username": "Enter username",
-  "Enter password": "Enter password"
+  "Enter password": "Enter password",
+  "Authorization form": "Authorization form",
+  "Login or password is incorrect": "Login or password is incorrect",
+  "Log Out": "Log Out"
 }

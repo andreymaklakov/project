@@ -150,3 +150,21 @@ export const SqareSizeXL: Story = {
     size: ButtonSize.XL,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: "Button",
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+    disabled: true,
+  },
+};
+
+export const DisabledDark: Story = {
+  args: {
+    children: "Button",
+    variant: ButtonVariant.BACKGROUND_INVERTED,
+    disabled: true,
+  },
+};
+
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

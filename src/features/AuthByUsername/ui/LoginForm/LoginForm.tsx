@@ -1,35 +1,72 @@
-import { FC, useState } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 
+import { AppDispatch } from "app/providers/StoreProvider/config/store";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button } from "shared/ui/Button/Button";
+import { Button, ButtonVariant } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
+import { Text, TextVariant } from "shared/ui/Text/Text";
+
+import { getPassword } from "../../model/selectors/getPassword/getPassword";
+import { getUsername } from "../../model/selectors/getUsername/getUsername";
+import { loginActions } from "../../model/slice/loginSlice";
+import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import { getError } from "../../model/selectors/getError/gerError";
+import { getIsLoading } from "../../model/selectors/getIsLoading/getIsLoading";
 
 import styles from "./LoginForm.module.scss";
 
 interface LoginFormProps {
   className?: string;
+  onClose: () => void;
 }
 
-export const LoginForm: FC<LoginFormProps> = ({ className }) => {
-  const [value, setValue] = useState({ username: "", password: "" });
+export const LoginForm = memo(function LoginForm({
+  className,
+  onClose,
+}: LoginFormProps) {
+  const username = useSelector(getUsername);
+  const password = useSelector(getPassword);
+  const error = useSelector(getError);
+  const isLoading = useSelector(getIsLoading);
+
+  const dispatch = useDispatch<AppDispatch>();
 
   const cls = classNames(styles.LoginForm, {}, [className]);
 
   const { t } = useTranslation();
 
-  const handleChangeUsername = (val: string) => {
-    setValue((prevState) => ({ ...prevState, username: val }));
-  };
+  const handleChangeUsername = useCallback(
+    (val: string) => {
+      dispatch(loginActions.setUserName(val));
+    },
+    [dispatch]
+  );
 
-  const handleChangePasswod = (val: string) => {
-    setValue((prevState) => ({ ...prevState, password: val }));
-  };
+  const handleChangePasswod = useCallback(
+    (val: string) => {
+      dispatch(loginActions.setPassword(val));
+    },
+    [dispatch]
+  );
+
+  const handleLogin = useCallback(async () => {
+    const data = await dispatch(loginByUsername({ username, password }));
+
+    if (data.meta.requestStatus === "fulfilled") {
+      onClose();
+    }
+  }, [dispatch, username, password, onClose]);
 
   return (
     <div className={cls}>
+      <Text title={t("Authorization form")} />
+
+      {error ? <Text text={error} variant={TextVariant.ERROR} /> : null}
+
       <Input
-        value={value.username}
+        value={username}
         onChange={handleChangeUsername}
         placeholder={t("Enter username")}
         type="text"
@@ -37,12 +74,19 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
       />
       <Input
         onChange={handleChangePasswod}
-        value={value.password}
+        value={password}
         placeholder={t("Enter password")}
         type="password"
       />
 
-      <Button className={styles.btn}>{t("Log In")}</Button>
+      <Button
+        onClick={handleLogin}
+        disabled={isLoading}
+        variant={ButtonVariant.OUTLINE}
+        className={styles.btn}
+      >
+        {t("Log In")}
+      </Button>
     </div>
   );
-};
+});
