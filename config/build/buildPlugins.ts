@@ -29,10 +29,12 @@ export function buildPlugins({
   if (isDev) {
     plugins.push(
       //HotModuleReplacementPlugin for updating app when change code without page reload
-      new webpack.HotModuleReplacementPlugin(),
+      new webpack.HotModuleReplacementPlugin()
+    );
 
+    plugins.push(
       new BundleAnalyzerPlugin({
-        analyzerPort: 3333,
+        analyzerPort: 3003,
         openAnalyzer: false,
       })
     );

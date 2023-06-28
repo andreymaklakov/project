@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -7,25 +7,30 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonVariant } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 import { Text, TextVariant } from "shared/ui/Text/Text";
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 import { getPassword } from "../../model/selectors/getPassword/getPassword";
 import { getUsername } from "../../model/selectors/getUsername/getUsername";
-import { loginActions } from "../../model/slice/loginSlice";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { getError } from "../../model/selectors/getError/gerError";
 import { getIsLoading } from "../../model/selectors/getIsLoading/getIsLoading";
 
 import styles from "./LoginForm.module.scss";
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
   onClose: () => void;
 }
 
-export const LoginForm = memo(function LoginForm({
-  className,
-  onClose,
-}: LoginFormProps) {
+const initialReducers: ReducersList = {
+  login: loginReducer,
+};
+
+const LoginForm: FC<LoginFormProps> = ({ className, onClose }) => {
   const username = useSelector(getUsername);
   const password = useSelector(getPassword);
   const error = useSelector(getError);
@@ -60,33 +65,37 @@ export const LoginForm = memo(function LoginForm({
   }, [dispatch, username, password, onClose]);
 
   return (
-    <div className={cls}>
-      <Text title={t("Authorization form")} />
+    <DynamicModuleLoader removeAfterAnmount reducer={initialReducers}>
+      <div className={cls}>
+        <Text title={t("Authorization form")} />
 
-      {error ? <Text text={error} variant={TextVariant.ERROR} /> : null}
+        {error ? <Text text={error} variant={TextVariant.ERROR} /> : null}
 
-      <Input
-        value={username}
-        onChange={handleChangeUsername}
-        placeholder={t("Enter username")}
-        type="text"
-        autoFocus
-      />
-      <Input
-        onChange={handleChangePasswod}
-        value={password}
-        placeholder={t("Enter password")}
-        type="password"
-      />
+        <Input
+          value={username}
+          onChange={handleChangeUsername}
+          placeholder={t("Enter username")}
+          type="text"
+          autoFocus
+        />
+        <Input
+          onChange={handleChangePasswod}
+          value={password}
+          placeholder={t("Enter password")}
+          type="password"
+        />
 
-      <Button
-        onClick={handleLogin}
-        disabled={isLoading}
-        variant={ButtonVariant.OUTLINE}
-        className={styles.btn}
-      >
-        {t("Log In")}
-      </Button>
-    </div>
+        <Button
+          onClick={handleLogin}
+          disabled={isLoading}
+          variant={ButtonVariant.OUTLINE}
+          className={styles.btn}
+        >
+          {t("Log In")}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
-});
+};
+
+export default memo(LoginForm);
