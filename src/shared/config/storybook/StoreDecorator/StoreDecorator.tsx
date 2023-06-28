@@ -11,7 +11,7 @@ const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
 
 export default function StoreDecorator(
   state: DeepPartial<StateSchema>,
-  asyncReducers: DeepPartial<ReducersMapObject<StateSchema>>
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 ) {
   return function fn(Story: PartialStoryFn<ReactRenderer>) {
     return (
