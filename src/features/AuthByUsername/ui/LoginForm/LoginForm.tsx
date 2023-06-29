@@ -1,8 +1,7 @@
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { AppDispatch } from "app/providers/StoreProvider/config/store";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonVariant } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
@@ -11,6 +10,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 import { getPassword } from "../../model/selectors/getPassword/getPassword";
 import { getUsername } from "../../model/selectors/getUsername/getUsername";
@@ -36,7 +36,7 @@ const LoginForm: FC<LoginFormProps> = ({ className, onClose }) => {
   const error = useSelector(getError);
   const isLoading = useSelector(getIsLoading);
 
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
   const cls = classNames(styles.LoginForm, {}, [className]);
 
@@ -65,7 +65,7 @@ const LoginForm: FC<LoginFormProps> = ({ className, onClose }) => {
   }, [dispatch, username, password, onClose]);
 
   return (
-    <DynamicModuleLoader removeAfterAnmount reducer={initialReducers}>
+    <DynamicModuleLoader removeAfterUnmount reducer={initialReducers}>
       <div className={cls}>
         <Text title={t("Authorization form")} />
 

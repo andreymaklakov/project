@@ -4,7 +4,6 @@ import {
   memo,
   useEffect,
   useRef,
-  useState,
 } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";

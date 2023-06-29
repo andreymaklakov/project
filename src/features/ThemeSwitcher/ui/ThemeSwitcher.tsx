@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { memo } from "react";
 
 import { useTheme, Theme } from "app/providers/ThemeProvider";
 
@@ -11,7 +11,9 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
+export const ThemeSwitcher = memo(function ThemeSwitcher({
+  className,
+}: ThemeSwitcherProps) {
   const { theme, toggleTheme } = useTheme();
 
   const cls = classNames("", {}, [className]);
@@ -21,4 +23,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
       {theme === Theme.LIGHT ? <LightThemeIcon /> : <DarkThemeIcon />}
     </Button>
   );
-};
+});

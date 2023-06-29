@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { memo } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 
@@ -16,12 +16,12 @@ interface TextProps {
   variant?: TextVariant;
 }
 
-export const Text: FC<TextProps> = ({
+export const Text = memo(function Text({
   className,
   text,
   title,
   variant = TextVariant.PRIMARY,
-}) => {
+}: TextProps) {
   const mods = {};
   const cls = classNames(styles.Text, mods, [className, styles[variant]]);
 
@@ -31,4 +31,4 @@ export const Text: FC<TextProps> = ({
       {text ? <p className={styles.text}>{text}</p> : null}
     </div>
   );
-};
+});

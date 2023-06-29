@@ -5,6 +5,8 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
+
+import { ProfileSchema } from "entitiess/Profile";
 import { UserSchema } from "entitiess/User";
 import { LoginSchema } from "features/AuthByUsername";
 
@@ -13,6 +15,7 @@ export interface StateSchema {
 
   //async reducers
   login?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
