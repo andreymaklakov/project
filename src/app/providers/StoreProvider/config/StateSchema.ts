@@ -5,6 +5,8 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
+import { AxiosInstance } from "axios";
+import { NavigateOptions, To } from "react-router-dom";
 
 import { ProfileSchema } from "entitiess/Profile";
 import { UserSchema } from "entitiess/User";
@@ -27,4 +29,14 @@ export interface ReducerManager {
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: keyof StateSchema, reducer: Reducer) => void;
   remove: (key: keyof StateSchema) => void;
+}
+
+export interface ThunkExtraArgs {
+  api: AxiosInstance;
+  navigate: (to: To, options?: NavigateOptions) => void;
+}
+
+export interface ThunkConfig<T> {
+  rejectValue: T;
+  extra: ThunkExtraArgs;
 }

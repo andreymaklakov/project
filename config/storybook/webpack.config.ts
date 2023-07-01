@@ -28,7 +28,12 @@ export default ({ config }: { config: Configuration }) => {
     }
   );
 
-  config.plugins?.push(new DefinePlugin({ __IS_DEV__: true }));
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(true),
+      __API__: JSON.stringify(""),
+    })
+  );
 
   config.module?.rules?.push({
     test: /\.svg$/,
