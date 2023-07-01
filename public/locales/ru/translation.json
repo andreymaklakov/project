@@ -18,5 +18,6 @@
   "Login or password is incorrect": "Неверный логин или пароль",
   "Log Out": "Выйти",
   "PROFILE PAGE": "Профиль",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "error": "ошибка"
 }

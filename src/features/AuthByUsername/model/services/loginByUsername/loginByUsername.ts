@@ -27,12 +27,12 @@ export const loginByUsername = createAsyncThunk<
       localStorage.setItem("user", JSON.stringify(response.data));
       thunkAPI.dispatch(userActions.setAuthData(response.data));
 
-      thunkAPI.extra.navigate("/profile");
+      thunkAPI.extra.navigate?.("/profile");
 
       return response.data;
     } catch (error) {
       console.log(error);
+      return thunkAPI.rejectWithValue(i18n.t("Login or password is incorrect"));
     }
-    return thunkAPI.rejectWithValue(i18n.t("Login or password is incorrect"));
   }
 );

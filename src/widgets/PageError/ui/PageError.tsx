@@ -10,7 +10,7 @@ interface PageErrorProps {
   className?: string;
 }
 
-export const PageError: FC<PageErrorProps> = ({ className }) => {
+export const PageError: FC<PageErrorProps> = ({ className = "" }) => {
   const cls = classNames(styles.PageError, {}, [className]);
 
   const { t } = useTranslation();

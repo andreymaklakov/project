@@ -22,7 +22,7 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo(function Input({
-  className,
+  className = "",
   value,
   onChange,
   type = "text",
@@ -32,7 +32,7 @@ export const Input = memo(function Input({
 }: InputProps) {
   const cls = classNames(styles.InputWrapper, {}, [className]);
 
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef<HTMLInputElement | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
@@ -40,7 +40,7 @@ export const Input = memo(function Input({
 
   useEffect(() => {
     if (autoFocus) {
-      ref.current.focus();
+      ref.current?.focus();
     }
   }, [autoFocus]);
 

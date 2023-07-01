@@ -8,7 +8,7 @@ interface LoaderProps {
   className?: string;
 }
 
-export const Loader: FC<LoaderProps> = ({ className }) => {
+export const Loader: FC<LoaderProps> = ({ className = "" }) => {
   const cls = classNames("lds-ring", {}, [className]);
 
   return (

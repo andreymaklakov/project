@@ -9,7 +9,7 @@ interface PageLoaderProps {
   className?: string;
 }
 
-export const PageLoader: FC<PageLoaderProps> = ({ className }) => {
+export const PageLoader: FC<PageLoaderProps> = ({ className = "" }) => {
   const cls = classNames(styles.PageLoader, {}, [className]);
 
   return (

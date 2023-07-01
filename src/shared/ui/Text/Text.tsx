@@ -17,13 +17,12 @@ interface TextProps {
 }
 
 export const Text = memo(function Text({
-  className,
+  className = "",
   text,
   title,
   variant = TextVariant.PRIMARY,
 }: TextProps) {
-  const mods = {};
-  const cls = classNames(styles.Text, mods, [className, styles[variant]]);
+  const cls = classNames(styles.Text, {}, [className, styles[variant]]);
 
   return (
     <div className={cls}>

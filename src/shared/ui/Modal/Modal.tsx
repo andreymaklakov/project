@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
 
 import styles from "./Modal.module.scss";
@@ -15,7 +15,7 @@ interface ModalProps {
 const ANIMATION_DELAY = 200;
 
 export const Modal: FC<ModalProps> = ({
-  className,
+  className = "",
   children,
   isOpen,
   lazy = false,
@@ -25,9 +25,9 @@ export const Modal: FC<ModalProps> = ({
   const [isOpening, setIsOpening] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const timeRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpening,
     [styles.isClosing]: isClosing,
   };
@@ -68,7 +68,9 @@ export const Modal: FC<ModalProps> = ({
     handleOpen();
 
     return () => {
-      clearTimeout(timeRef.current);
+      if (timeRef.current) {
+        clearTimeout(timeRef.current);
+      }
       setIsMounted(false);
       setIsOpening(false);
     };
@@ -80,7 +82,9 @@ export const Modal: FC<ModalProps> = ({
     }
 
     return () => {
-      clearTimeout(timeRef.current);
+      if (timeRef.current) {
+        clearTimeout(timeRef.current);
+      }
 
       window.removeEventListener("keydown", handleKeyDown);
     };

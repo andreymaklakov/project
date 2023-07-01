@@ -12,7 +12,7 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher = memo(function ThemeSwitcher({
-  className,
+  className = "",
 }: ThemeSwitcherProps) {
   const { theme, toggleTheme } = useTheme();
 

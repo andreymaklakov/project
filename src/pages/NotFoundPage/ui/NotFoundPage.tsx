@@ -10,7 +10,7 @@ interface NotFoundPageProps {
 }
 
 export const NotFoundPage = memo(function NotFoundPage({
-  className,
+  className = "",
 }: NotFoundPageProps) {
   const cls = classNames(styles.NotFoundPage, {}, [className]);
 

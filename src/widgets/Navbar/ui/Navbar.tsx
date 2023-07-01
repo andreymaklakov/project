@@ -14,7 +14,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = memo(function Navbar({ className }: NavbarProps) {
+export const Navbar = memo(function Navbar({ className = "" }: NavbarProps) {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
   const userAuthData = useSelector(getUserAuthData);
 

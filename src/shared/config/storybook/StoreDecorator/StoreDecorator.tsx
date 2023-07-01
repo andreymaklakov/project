@@ -1,17 +1,17 @@
-import { DeepPartial, ReducersMapObject } from "@reduxjs/toolkit";
 import type { ReactRenderer } from "@storybook/react";
 import { PartialStoryFn } from "@storybook/types";
 
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers: ReducersList = {
   login: loginReducer,
 };
 
 export default function StoreDecorator(
   state: DeepPartial<StateSchema>,
-  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+  asyncReducers?: ReducersList
 ) {
   return function fn(Story: PartialStoryFn<ReactRenderer>) {
     return (
