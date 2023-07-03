@@ -18,53 +18,59 @@
   outline: none;
 }
 
-.clearInverted{
+.clearInverted {
   color: var(--inverted-primary-color);
 }
- 
+
 .outline {
   border: 1px solid var(--primary-color);
   background: none;
 }
 
-.background{
-  background: var(--bg-color);
-  border: none
+.outline_red {
+  border: 1px solid var(--red-light-color);
+  color: var(--red-light-color);
+  background: none;
 }
 
-.backgroundInverted{
+.background {
+  background: var(--bg-color);
+  border: none;
+}
+
+.backgroundInverted {
   background: var(--inverted-bg-color);
   color: var(--inverted-primary-color);
-  border: none
+  border: none;
 }
 
-.sqaure{
+.sqaure {
   padding: 0;
 }
 
-.sqaure.sizeM{
+.sqaure.sizeM {
   width: var(--font-line-m);
   height: var(--font-line-m);
 }
 
-.sqaure.sizeL{
+.sqaure.sizeL {
   width: var(--font-line-l);
   height: var(--font-line-l);
 }
 
-.sqaure.sizeXL{
+.sqaure.sizeXL {
   width: var(--font-line-xl);
   height: var(--font-line-xl);
 }
 
-.sizeM{
-  font: var(--font-m)
+.sizeM {
+  font: var(--font-m);
 }
 
-.sizeL{
-  font: var(--font-l)
+.sizeL {
+  font: var(--font-l);
 }
 
-.sizeXL{
-  font: var(--font-xl)
+.sizeXL {
+  font: var(--font-xl);
 }

@@ -3,8 +3,8 @@
   align-items: center;
   gap: 5px;
 
-  .placeholder{
-    width: 100%;
+  .placeholder {
+    min-width: fit-content;
   }
 
   input {
@@ -14,5 +14,12 @@
     width: 100%;
     color: var(--primary-color);
     padding: 0 8px;
+  }
+}
+
+.readonly {
+  input {
+    border: none;
+    outline: none;
   }
 }

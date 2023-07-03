@@ -1,6 +1,17 @@
 {
-  "profile.Profile": "Profile",
-  "profile.Change": "Change",
-  "profile.Your name": "Your name",
-  "profile.Your lastname": "Yout lastname"
+  "Profile": "Profile",
+  "Change": "Change",
+  "Your name": "Your name",
+  "Your lastname": "Yout lastname",
+  "Error ocured during loading profile info": "Error ocured during loading profile info",
+  "Try to refresh web page": "Try to refresh web page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Age": "Age",
+  "City": "City",
+  "Country": "Сountry",
+  "Currency": "Currency",
+  "Username": "Username",
+  "Avatar": "Avatar",
+  "profile.Country": "Country"
 }

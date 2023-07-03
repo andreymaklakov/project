@@ -9,11 +9,18 @@ export enum TextVariant {
   ERROR = "error",
 }
 
+export enum TextAlign {
+  RIGHT = "right",
+  LEFT = "left",
+  CENTER = "center",
+}
+
 interface TextProps {
   className?: string;
   title?: string;
   text?: string;
   variant?: TextVariant;
+  align?: TextAlign;
 }
 
 export const Text = memo(function Text({
@@ -21,8 +28,13 @@ export const Text = memo(function Text({
   text,
   title,
   variant = TextVariant.PRIMARY,
+  align = TextAlign.LEFT,
 }: TextProps) {
-  const cls = classNames(styles.Text, {}, [className, styles[variant]]);
+  const cls = classNames(styles.Text, {}, [
+    className,
+    styles[variant],
+    styles[align],
+  ]);
 
   return (
     <div className={cls}>

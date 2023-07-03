@@ -1,6 +1,17 @@
 {
-  "profile.Profile": "Профиль",
-  "profile.Change": "Редактировать",
-  "profile.Your name": "Ваше имя",
-  "profile.Your lastname": "Ваша фамилия"
+  "Profile": "Профиль",
+  "Change": "Редактировать",
+  "Your name": "Ваше имя",
+  "Your lastname": "Ваша фамилия",
+  "Error ocured during loading profile info": "Произошла ошибка при загрузке профиля",
+  "Try to refresh web page": "Попробуйте обновить страницу",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Age": "Возраст",
+  "City": "Город",
+  "Country": "Cтрана",
+  "Currency": "Валюта",
+  "Username": "Имя пользователя",
+  "Avatar": "Аватар",
+  "Country": "Страна"
 }

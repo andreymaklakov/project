@@ -2,19 +2,25 @@
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
 
-  .header {
-    display: flex;
-
-    .editBtn {
-      margin-left: auto;
-    }
-  }
-
   .data {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
-    .input {
-      margin-top: 10px;
+    img {
+      margin: 0 auto;
     }
   }
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.editing {
+  border: 2px solid var(--inverted-primary-color);
 }
