@@ -38,7 +38,7 @@ module.exports = {
       },
     ],
     semi: [2, "always"],
-    indent: ["error", 2],
+    // indent: ["error", 2],
     "@typescript-eslint/no-empty-function": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "off",

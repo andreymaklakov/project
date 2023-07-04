@@ -9,9 +9,13 @@
   "Save": "Сохранить",
   "Age": "Возраст",
   "City": "Город",
-  "Country": "Cтрана",
+  "Country": "Страна",
   "Currency": "Валюта",
   "Username": "Имя пользователя",
   "Avatar": "Аватар",
-  "Country": "Страна"
+  "Server error": "Ошибка сервера",
+  "Data not found": "Данные не указаны",
+  "Age is incorrect": "Некорректно указан возраст",
+  "Country is incorrect": "Некорректно указаны страна",
+  "Firstname and secondname are required": "Имя и фамилия обязательны"
 }

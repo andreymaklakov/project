@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 
 import { Select } from "shared/ui/Select/Select";
 
-import { Country } from "../../model/types/country";
+import { Countries } from "../../model/types/countries";
 
 interface CountrySelectProps {
   className?: string;
-  value?: Country;
-  onChange?: (value: Country) => void;
+  value?: Countries;
+  onChange?: (value: Countries) => void;
   readonly?: boolean;
 }
 
@@ -22,7 +22,7 @@ export const CountrySelect = memo(function CountrySelect({
 
   const countryOptions = useMemo(
     () =>
-      Object.entries(Country).map((val) => ({
+      Object.entries(Countries).map((val) => ({
         value: val[0],
         content: val[1],
       })),
@@ -30,7 +30,7 @@ export const CountrySelect = memo(function CountrySelect({
   );
 
   const handleChange = useCallback(
-    (value: string) => onChange?.(value as Country),
+    (value: string) => onChange?.(value as Countries),
     [onChange]
   );
 

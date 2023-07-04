@@ -4,7 +4,7 @@ import { Theme } from "app/providers/ThemeProvider";
 import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
 import { CountrySelect } from "./CountrySelect";
-import { Country } from "../../model/types/country";
+import { Countries } from "../../model/types/countries";
 
 const meta: Meta<typeof CountrySelect> = {
   title: "entities/CountrySelect",
@@ -18,12 +18,12 @@ type Story = StoryObj<typeof CountrySelect>;
 
 export const Light: Story = {
   args: {
-    value: Country.Latvia,
+    value: Countries.Latvia,
   },
 };
 
 export const Dark: Story = {
-  args: { value: Country.Latvia },
+  args: { value: Countries.Latvia },
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

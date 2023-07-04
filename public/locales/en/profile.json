@@ -13,5 +13,9 @@
   "Currency": "Currency",
   "Username": "Username",
   "Avatar": "Avatar",
-  "profile.Country": "Country"
+  "Server error": "Server error",
+  "Data not found": "Data not found",
+  "Age is incorrect": "Age is incorrect",
+  "Country is incorrect": "Country is incorrect",
+  "Firstname and secondname are required": "Firstname and secondname are required"
 }

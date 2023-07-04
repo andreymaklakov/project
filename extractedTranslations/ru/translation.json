@@ -1,6 +1,8 @@
 {
+  "": "",
   "About": "About",
   "Age": "Age",
+  "Age is incorrect": "Age is incorrect",
   "An error has occurred": "An error has occurred",
   "Authorization form": "Authorization form",
   "Avatar": "Avatar",
@@ -8,10 +10,13 @@
   "Change": "Change",
   "City": "City",
   "Country": "Country",
+  "Country is incorrect": "Country is incorrect",
   "Currency": "Currency",
+  "Data not found": "Data not found",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "Error ocured during loading profile info": "Error ocured during loading profile info",
+  "Firstname and secondname are required": "Firstname and secondname are required",
   "Loading": {
     "": {
       "": {
@@ -28,6 +33,7 @@
   "Profile": "Profile",
   "Reload page": "Reload page",
   "Save": "Save",
+  "Server error": "Server error",
   "Throw Error": "Throw Error",
   "Try to refresh web page": "Try to refresh web page",
   "Username": "Username",

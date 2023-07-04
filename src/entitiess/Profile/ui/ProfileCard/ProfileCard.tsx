@@ -1,4 +1,4 @@
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "shared/lib/classNames/classNames";
@@ -7,7 +7,7 @@ import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader/Loader";
 import { Text, TextAlign, TextVariant } from "shared/ui/Text/Text";
 import { Currency, CurrencySelect } from "entitiess/Currency";
-import { Country, CountrySelect } from "entitiess/Country";
+import { Countries, CountrySelect } from "entitiess/Country";
 
 import { Profile } from "../../model/types/profile";
 
@@ -25,7 +25,7 @@ interface ProfileCardProps {
   onChangeCity?: (value: string) => void;
   onChangeUsername?: (value: string) => void;
   onChangeAvatar?: (value: string) => void;
-  onChangeCountry?: (value: Country) => void;
+  onChangeCountry?: (value: Countries) => void;
   onChangeCurrency?: (value: Currency) => void;
 }
 

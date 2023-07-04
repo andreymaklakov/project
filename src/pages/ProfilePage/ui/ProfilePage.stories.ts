@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Theme } from "app/providers/ThemeProvider";
+import { Countries } from "entitiess/Country";
+import { Currency } from "entitiess/Currency";
 import StoreDecorator from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import ProfilePage from "./ProfilePage";
@@ -22,10 +24,17 @@ export const Light: Story = {
 Light.decorators = [
   StoreDecorator({
     profile: {
-      data: undefined,
-      isLoading: false,
-      error: undefined,
-      readonly: true,
+      form: {
+        first: "Andrejs",
+        lastname: "Maklakovs",
+        age: 28,
+        currency: Currency.EUR,
+        country: Countries.Latvia,
+        city: "Liepāja",
+        username: "admin",
+        avatar:
+          "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
+      },
     },
   }),
 ];
@@ -38,10 +47,17 @@ Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
     profile: {
-      data: undefined,
-      isLoading: false,
-      error: undefined,
-      readonly: true,
+      form: {
+        first: "Andrejs",
+        lastname: "Maklakovs",
+        age: 28,
+        currency: Currency.EUR,
+        country: Countries.Latvia,
+        city: "Liepāja",
+        username: "admin",
+        avatar:
+          "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
+      },
     },
   }),
 ];

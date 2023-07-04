@@ -21,13 +21,14 @@ export const profileSlice = createSlice({
     },
     updateProfile: (state, action: PayloadAction<DeepPartial<Profile>>) => {
       state.form = {
-        ...state.data,
+        ...state.form,
         ...action.payload,
       };
     },
     cancelEdit: (state) => {
       state.form = state.data;
       state.readonly = true;
+      state.validateError = undefined;
     },
   },
   extraReducers: (builder) => {
@@ -49,7 +50,7 @@ export const profileSlice = createSlice({
     });
 
     builder.addCase(updateProfileData.pending, (state) => {
-      state.error = undefined;
+      state.validateError = undefined;
       state.isLoading = true;
     });
     builder.addCase(
@@ -57,6 +58,7 @@ export const profileSlice = createSlice({
       (state, action: PayloadAction<Profile>) => {
         state.isLoading = false;
         state.readonly = true;
+        state.validateError = undefined;
 
         state.data = action.payload;
         state.form = action.payload;
@@ -64,7 +66,7 @@ export const profileSlice = createSlice({
     );
     builder.addCase(updateProfileData.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.validateError = action.payload;
     });
   },
 });
