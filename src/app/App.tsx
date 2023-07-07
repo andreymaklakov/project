@@ -1,8 +1,9 @@
 import { Suspense, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { userActions } from "entitiess/User";
+import { getUserInited, userActions } from "entitiess/User";
 
 import { AppRouter } from "./providers/router";
 
@@ -11,6 +12,8 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 const App = () => {
   const cls = classNames("app", {}, []);
+
+  const inited = useSelector(getUserInited);
 
   const dispatch = useAppDispatch();
 
@@ -26,7 +29,7 @@ const App = () => {
         <div className="content-page">
           <Sidebar />
 
-          <AppRouter />
+          {inited ? <AppRouter /> : null}
         </div>
       </Suspense>
     </div>
