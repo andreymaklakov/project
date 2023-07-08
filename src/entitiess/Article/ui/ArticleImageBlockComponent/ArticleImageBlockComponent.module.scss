@@ -1,0 +1,10 @@
+.ArticleImageBlockComponent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

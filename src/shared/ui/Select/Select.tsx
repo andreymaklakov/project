@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, memo, useCallback, useMemo } from "react";
+import { ChangeEvent, memo, useCallback, useMemo } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 

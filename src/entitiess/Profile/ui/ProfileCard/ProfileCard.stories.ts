@@ -17,6 +17,18 @@ const meta: Meta<typeof ProfileCard> = {
 export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
+const data = {
+  first: "Andrejs",
+  lastname: "Maklakovs",
+  age: 28,
+  currency: Currency.EUR,
+  country: Countries.Latvia,
+  city: "Liepāja",
+  username: "admin",
+  avatar:
+    "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
+};
+
 export const EmptyLight: Story = {
   args: {},
 };
@@ -39,33 +51,13 @@ ReadonlyEmptyDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithDataLight: Story = {
   args: {
-    data: {
-      first: "Andrejs",
-      lastname: "Maklakovs",
-      age: 28,
-      currency: Currency.EUR,
-      country: Countries.Latvia,
-      city: "Liepāja",
-      username: "admin",
-      avatar:
-        "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
-    },
+    data,
   },
 };
 
 export const WithDataDark: Story = {
   args: {
-    data: {
-      first: "Andrejs",
-      lastname: "Maklakovs",
-      age: 28,
-      currency: Currency.EUR,
-      country: Countries.Latvia,
-      city: "Liepāja",
-      username: "admin",
-      avatar:
-        "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
-    },
+    data,
   },
 };
 
@@ -73,34 +65,14 @@ WithDataDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const ReadonlyWithDataLight: Story = {
   args: {
-    data: {
-      first: "Andrejs",
-      lastname: "Maklakovs",
-      age: 28,
-      currency: Currency.EUR,
-      country: Countries.Latvia,
-      city: "Liepāja",
-      username: "admin",
-      avatar:
-        "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
-    },
+    data,
     readonly: true,
   },
 };
 
 export const ReadonlyWithDataDark: Story = {
   args: {
-    data: {
-      first: "Andrejs",
-      lastname: "Maklakovs",
-      age: 28,
-      currency: Currency.EUR,
-      country: Countries.Latvia,
-      city: "Liepāja",
-      username: "admin",
-      avatar:
-        "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
-    },
+    data,
     readonly: true,
   },
 };

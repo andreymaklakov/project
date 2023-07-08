@@ -4,6 +4,7 @@
   "Age": "Age",
   "Age is incorrect": "Age is incorrect",
   "An error has occurred": "An error has occurred",
+  "Article not found": "Article not found",
   "Authorization form": "Authorization form",
   "Avatar": "Avatar",
   "Cancel": "Cancel",
@@ -15,6 +16,7 @@
   "Data not found": "Data not found",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
+  "Error occurred during loading article": "Error occurred during loading article",
   "Error ocured during loading profile info": "Error ocured during loading profile info",
   "Firstname and secondname are required": "Firstname and secondname are required",
   "Loading": {

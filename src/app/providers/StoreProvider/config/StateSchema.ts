@@ -11,6 +11,7 @@ import { NavigateOptions, To } from "react-router-dom";
 import { ProfileSchema } from "entitiess/Profile";
 import { UserSchema } from "entitiess/User";
 import { LoginSchema } from "features/AuthByUsername";
+import { ArticleDetailsSchema } from "entitiess/Article";
 
 export interface StateSchema {
   user: UserSchema;
@@ -18,6 +19,7 @@ export interface StateSchema {
   //async reducers
   login?: LoginSchema;
   profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

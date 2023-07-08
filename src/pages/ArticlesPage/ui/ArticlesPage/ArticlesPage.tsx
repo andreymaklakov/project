@@ -14,7 +14,7 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
 
   const { t } = useTranslation("article");
 
-  return <div className={cls}>Articles page</div>;
+  return <div className={cls}></div>;
 };
 
 export default memo(ArticlesPage);

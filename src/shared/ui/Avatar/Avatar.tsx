@@ -1,4 +1,4 @@
-import { CSSProperties, FC, memo, useMemo } from "react";
+import { CSSProperties, memo, useMemo } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 

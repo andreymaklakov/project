@@ -4,9 +4,11 @@ import { PartialStoryFn } from "@storybook/types";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { articleDetailsReducer } from "entitiess/Article/model/slice/articleDetailsSlice";
 
 const defaultAsyncReducers: ReducersList = {
   login: loginReducer,
+  articleDetails: articleDetailsReducer,
 };
 
 export default function StoreDecorator(

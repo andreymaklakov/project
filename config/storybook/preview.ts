@@ -2,10 +2,10 @@ import type { Preview } from "@storybook/react";
 
 import { Theme } from "./../../src/app/providers/ThemeProvider";
 import ThemeDecorator from "./../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { RouterDecorator } from "./../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { TranslationDecorator } from "./../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator";
 
 import "app/styles/index.scss";
+import { withRouter } from "storybook-addon-react-router-v6";
 
 const preview: Preview = {
   parameters: {
@@ -19,7 +19,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => ThemeDecorator(Theme.LIGHT)(Story),
-    (Story) => RouterDecorator(Story),
+    withRouter,
     (Story) => TranslationDecorator(Story),
   ],
 };
