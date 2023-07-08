@@ -91,13 +91,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4="
     },
     {
       "id": "2",
       "password": "password",
       "username": "Andrejs",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://res.cloudinary.com/practicaldev/image/fetch/s--TenQsTYv--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rd3omc5vp71r5k9z69b4.png"
     }
   ],
   "profile": {

@@ -5,10 +5,12 @@ import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { articleDetailsReducer } from "entitiess/Article/model/slice/articleDetailsSlice";
+import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice";
 
 const defaultAsyncReducers: ReducersList = {
   login: loginReducer,
   articleDetails: articleDetailsReducer,
+  articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 export default function StoreDecorator(

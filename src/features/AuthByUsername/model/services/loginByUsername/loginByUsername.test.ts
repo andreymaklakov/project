@@ -13,7 +13,7 @@ describe("loginByUsername.test", () => {
   // });
 
   test("should return user data", async () => {
-    const userValue = { username: "username", id: "1" };
+    const userValue = { username: "username", id: "1", avatar: "" };
 
     const thunk = new TestAsyncThunk(loginByUsername);
 

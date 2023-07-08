@@ -9,6 +9,7 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextVariant } from "shared/ui/Text/Text";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 import {
   fetchProfileData,
@@ -58,11 +59,9 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = "" }) => {
 
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData());
+  });
 
   const handleChangeFirstname = useCallback(
     (value: string) => {
