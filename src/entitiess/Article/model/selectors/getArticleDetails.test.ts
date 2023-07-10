@@ -17,6 +17,12 @@ describe("getArticleDetailsData.test", () => {
       img: "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
       views: 1022,
       createdAt: "07.07.2023",
+      user: {
+        id: "1",
+        username: "admin",
+        avatar:
+          "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
+      },
       type: [ArticleType.IT],
       blocks: [
         {

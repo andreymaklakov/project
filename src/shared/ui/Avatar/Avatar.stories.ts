@@ -35,3 +35,9 @@ export const CustomSized: Story = {
     size: 50,
   },
 };
+
+export const NoAvatar: Story = {
+  args: {
+    size: 200,
+  },
+};

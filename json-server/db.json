@@ -75,9 +75,8 @@
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
       "views": 1022,
       "createdAt": "07.07.2023",
-      "type": [
-        "IT"
-      ],
+      "userId": "1",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",

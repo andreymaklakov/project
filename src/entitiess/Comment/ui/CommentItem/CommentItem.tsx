@@ -46,13 +46,7 @@ export const CommentItem = memo(function CommentItem({
         to={`${RoutePaths.profile}${comment.user.id}`}
         className={styles.header}
       >
-        <Avatar
-          size={30}
-          src={
-            comment.user.avatar ||
-            "https://www.eastendprep.org/wp-content/uploads/2016/06/noavatar.jpg"
-          }
-        />
+        <Avatar size={30} src={comment.user.avatar} />
 
         <Text title={comment.user.username} />
       </AppLink>

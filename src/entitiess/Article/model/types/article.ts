@@ -1,3 +1,5 @@
+import { User } from "entitiess/User";
+
 export interface Article {
   id: string;
   title: string;
@@ -5,6 +7,7 @@ export interface Article {
   img: string;
   views: number;
   createdAt: string;
+  user: User;
   type: ArticleType[];
   blocks: ArticleBlock[];
 }
@@ -45,4 +48,9 @@ export enum ArticleBlockType {
   TEXT = "TEXT",
   CODE = "CODE",
   IMAGE = "IMAGE",
+}
+
+export enum ArticleView {
+  LIST = "LIST",
+  CARD = "CARD",
 }

@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { classNames } from "shared/lib/classNames/classNames";
@@ -14,6 +14,8 @@ import {
 import { ArticleDetails } from "entitiess/Article";
 import { CommentList } from "entitiess/Comment";
 import { AddCommentForm } from "features/AddCommentForm";
+import { Button } from "shared/ui/Button/Button";
+import { RoutePaths } from "shared/config/routeConfig/routeConfig";
 
 import {
   articleDetailsCommentsReducer,
@@ -45,6 +47,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
 
   const dispatch = useAppDispatch();
 
+  const navigate = useNavigate();
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   });
@@ -56,12 +60,18 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     [dispatch]
   );
 
+  const handleBack = useCallback(() => {
+    navigate(RoutePaths.articles);
+  }, [navigate]);
+
   if (!id) {
     return <div className={cls}>{t("Article not found")}</div>;
   }
   return (
     <DynamicModuleLoader reducer={initialReducers} removeAfterUnmount>
       <div className={cls}>
+        <Button onClick={handleBack}>{t("Back")}</Button>
+
         <ArticleDetails id={id} />
 
         <Text className={styles.commentsTitle} title={t("Comments")} />

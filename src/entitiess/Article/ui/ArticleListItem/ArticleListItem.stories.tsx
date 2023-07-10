@@ -1,9 +1,27 @@
-import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
-import { Article, ArticleBlockType, ArticleType } from "../types/article";
-import { ArticleDetailsSchema } from "../types/articleDetailsSchema";
-import { articleDetailsReducer } from "./articleDetailsSlice";
+import type { Meta, StoryObj } from "@storybook/react";
 
-const data: Article = {
+import { Theme } from "app/providers/ThemeProvider";
+import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+
+import {
+  Article,
+  ArticleBlockType,
+  ArticleType,
+  ArticleView,
+} from "../../model/types/article";
+import { ArticleListItem } from "./ArticleListItem";
+
+const meta: Meta<typeof ArticleListItem> = {
+  title: "entities/Article/ArticleListItem",
+  component: ArticleListItem,
+  tags: ["autodocs"],
+  argTypes: {},
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleListItem>;
+
+const article: Article = {
   id: "1",
   title: "Hello world! Or Habr in English, v1.0",
   subtitle: "What new in JS in 2022?",
@@ -16,7 +34,7 @@ const data: Article = {
     avatar:
       "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4=",
   },
-  type: [ArticleType.IT],
+  type: [ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS],
   blocks: [
     {
       id: "1",
@@ -69,46 +87,28 @@ const data: Article = {
   ],
 };
 
-describe("articleDetailsSlice.test", () => {
-  test("test fetchArticleById pending", () => {
-    const state: DeepPartial<ArticleDetailsSchema> = {
-      error: "",
-      isLoading: false,
-    };
+export const ListViewLight: Story = {
+  args: {
+    article,
+    view: ArticleView.LIST,
+  },
+};
 
-    expect(
-      articleDetailsReducer(
-        state as ArticleDetailsSchema,
-        fetchArticleById.pending
-      )
-    ).toEqual({ error: undefined, isLoading: true });
-  });
+export const ListViewDark: Story = {
+  args: { article, view: ArticleView.LIST },
+};
 
-  test("test fetchArticleById rejected", () => {
-    const state: DeepPartial<ArticleDetailsSchema> = {
-      error: "error",
-      isLoading: true,
-    };
+ListViewDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-    expect(
-      articleDetailsReducer(
-        state as ArticleDetailsSchema,
-        fetchArticleById.rejected
-      )
-    ).toEqual({ error: undefined, isLoading: false });
-  });
+export const ListViewOrange: Story = {
+  args: { article, view: ArticleView.LIST },
+};
 
-  test("test fetchArticleById fulfilled", () => {
-    const state: DeepPartial<ArticleDetailsSchema> = {
-      data: undefined,
-      isLoading: true,
-    };
+ListViewOrange.decorators = [ThemeDecorator(Theme.ORANGE)];
 
-    expect(
-      articleDetailsReducer(
-        state as ArticleDetailsSchema,
-        fetchArticleById.fulfilled(data, "", "")
-      )
-    ).toEqual({ data, isLoading: false });
-  });
-});
+export const CardViewLight: Story = {
+  args: {
+    article,
+    view: ArticleView.CARD,
+  },
+};

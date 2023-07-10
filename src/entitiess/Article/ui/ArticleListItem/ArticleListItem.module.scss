@@ -1,0 +1,102 @@
+.ArticleListItem {
+  padding: 0;
+}
+
+.LIST {
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .date {
+      margin-left: auto;
+    }
+  }
+
+  .title {
+    margin-top: 8px;
+  }
+
+  .types {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .textBlock p {
+    max-height: 200px;
+    overflow-y: hidden;
+  }
+
+  .footer {
+    display: flex;
+    margin-top: 16px;
+
+    .views {
+      margin-left: auto;
+    }
+  }
+}
+
+.CARD {
+  width: 230px;
+  cursor: pointer;
+
+  .title p {
+    margin-top: 8px;
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .date {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: none;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+
+    .types p {
+      white-space: nowrap;
+      width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .views {
+      margin-left: auto;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+
+    .imageWrapper {
+      .date {
+        display: block;
+      }
+    }
+  }
+}
