@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -13,13 +13,15 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleDetails } from "entitiess/Article";
 import { CommentList } from "entitiess/Comment";
+import { AddCommentForm } from "features/AddCommentForm";
 
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
 } from "../../model/slice/articleDetailsCommentsSlice";
-import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
+import { getArticleCommentsIsLoading } from "../../model/selectors/comments/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 
 import styles from "./ArticleDetailsPage.module.scss";
 
@@ -47,6 +49,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
+  const handleSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch]
+  );
+
   if (!id) {
     return <div className={cls}>{t("Article not found")}</div>;
   }
@@ -56,6 +65,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
         <ArticleDetails id={id} />
 
         <Text className={styles.commentsTitle} title={t("Comments")} />
+
+        <AddCommentForm onSendComment={handleSendComment} />
 
         <CommentList isLoading={isLoading} comments={comments} />
       </div>

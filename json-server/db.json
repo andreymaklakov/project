@@ -23,6 +23,48 @@
       "text": "some other comment",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "userId": "1",
+      "text": "hello ladies",
+      "articleId": "1",
+      "id": "kvxGORZ"
+    },
+    {
+      "userId": "1",
+      "text": "test",
+      "articleId": "1",
+      "id": "X9odpC6"
+    },
+    {
+      "userId": "1",
+      "text": "dispatch test",
+      "articleId": "1",
+      "id": "GgsInJp"
+    },
+    {
+      "userId": "1",
+      "text": "ola",
+      "articleId": "1",
+      "id": "qcJptuI"
+    },
+    {
+      "userId": "1",
+      "text": "check",
+      "articleId": "1",
+      "id": "JHC3wyA"
+    },
+    {
+      "userId": "1",
+      "text": "231",
+      "articleId": "1",
+      "id": "M_ajLnJ"
+    },
+    {
+      "userId": "1",
+      "text": "231",
+      "articleId": "1",
+      "id": "xjxvSHd"
     }
   ],
   "articles": [
@@ -33,7 +75,9 @@
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
       "views": 1022,
       "createdAt": "07.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -102,14 +146,28 @@
       "avatar": "https://res.cloudinary.com/practicaldev/image/fetch/s--TenQsTYv--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rd3omc5vp71r5k9z69b4.png"
     }
   ],
-  "profile": {
-    "first": "Andrejs",
-    "lastname": "Maklakovs",
-    "age": 28,
-    "currency": "USD",
-    "country": "Latvia",
-    "city": "Liepāja",
-    "username": "admin",
-    "avatar": "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4="
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Andrejs",
+      "lastname": "Maklakovs",
+      "age": 28,
+      "currency": "USD",
+      "country": "Latvia",
+      "city": "Liepāja",
+      "username": "admin",
+      "avatar": "https://media.istockphoto.com/id/1225549108/vector/run-sport-exercise-vector-icon-illustration.jpg?s=612x612&w=0&k=20&c=RKFqwoj4U4mw076yakzLoxFxz5MLm1gQI_mU4RVpzp4="
+    },
+    {
+      "id": "2",
+      "first": "Andrejs",
+      "lastname": "Maklakovs",
+      "age": 28,
+      "currency": "EUR",
+      "country": "Latvia",
+      "city": "Liepāja",
+      "username": "Andrejs",
+      "avatar": "https://res.cloudinary.com/practicaldev/image/fetch/s--TenQsTYv--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rd3omc5vp71r5k9z69b4.png"
+    }
+  ]
 }

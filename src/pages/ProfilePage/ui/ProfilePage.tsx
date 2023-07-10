@@ -1,6 +1,7 @@
-import { FC, memo, useCallback, useEffect } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import {
@@ -39,6 +40,8 @@ const initialReducers: ReducersList = {
 const ProfilePage: FC<ProfilePageProps> = ({ className = "" }) => {
   const cls = classNames("", {}, [className]);
 
+  const { id } = useParams<{ id: string }>();
+
   const data = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
   const validateError = useSelector(getProfileValidateError);
@@ -60,7 +63,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = "" }) => {
   const dispatch = useAppDispatch();
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    dispatch(fetchProfileData(id));
   });
 
   const handleChangeFirstname = useCallback(

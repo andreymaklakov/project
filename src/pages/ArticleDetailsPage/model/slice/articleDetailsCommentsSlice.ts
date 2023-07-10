@@ -52,25 +52,3 @@ const articleDetailsCommentsSlice = createSlice({
 
 export const { reducer: articleDetailsCommentsReducer } =
   articleDetailsCommentsSlice;
-
-//   ids: ["1", "2"],
-// entities: {
-//   "1": {
-//     id: "1",
-//     text: "First comment",
-//     user: {
-//       id: "1",
-//       username: "admin",
-//       avatar: "",
-//     },
-//   },
-//   "2": {
-//     id: "2",
-//     text: "Second comment",
-//     user: {
-//       id: "2",
-//       username: "andrejs",
-//       avatar: "",
-//     },
-//   },
-// },

@@ -1,6 +1,7 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -11,6 +12,7 @@ import {
   profileActions,
   updateProfileData,
 } from "entitiess/Profile";
+import { getUserAuthData } from "entitiess/User";
 
 import styles from "./ProfilePageHeader.module.scss";
 
@@ -23,7 +25,12 @@ export const ProfilePageHeader = memo(function ProfilePageHeader({
 }: ProfilePageHeaderProps) {
   const cls = classNames(styles.ProfilePageHeader, {}, [className]);
 
+  const { id } = useParams<{ id: string }>();
+
   const readonly = useSelector(getProfileReadonly);
+  const userId = useSelector(getUserAuthData)?.id;
+  const canEdit = userId === id;
+
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation("profile");
@@ -44,28 +51,30 @@ export const ProfilePageHeader = memo(function ProfilePageHeader({
     <div className={cls}>
       <Text title={t("Profile")} />
 
-      {readonly ? (
-        <Button
-          onClick={handleAllowChange}
-          variant={ButtonVariant.OUTLINE}
-          className={styles.editBtn}
-        >
-          {t("Change")}
-        </Button>
-      ) : (
-        <div className={styles.formatBtns}>
+      {canEdit ? (
+        readonly ? (
           <Button
-            onClick={handleCancelChanges}
-            variant={ButtonVariant.OUTLINE_RED}
+            onClick={handleAllowChange}
+            variant={ButtonVariant.OUTLINE}
+            className={styles.editBtn}
           >
-            {t("Cancel")}
+            {t("Change")}
           </Button>
+        ) : (
+          <div className={styles.formatBtns}>
+            <Button
+              onClick={handleCancelChanges}
+              variant={ButtonVariant.OUTLINE_RED}
+            >
+              {t("Cancel")}
+            </Button>
 
-          <Button onClick={handleSaveChanges} variant={ButtonVariant.OUTLINE}>
-            {t("Save")}
-          </Button>
-        </div>
-      )}
+            <Button onClick={handleSaveChanges} variant={ButtonVariant.OUTLINE}>
+              {t("Save")}
+            </Button>
+          </div>
+        )
+      ) : null}
     </div>
   );
 });

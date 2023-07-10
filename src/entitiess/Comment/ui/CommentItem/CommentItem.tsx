@@ -1,6 +1,8 @@
 import { memo } from "react";
 
+import { RoutePaths } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink } from "shared/ui/AppLink/AppLink";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { Text } from "shared/ui/Text/Text";
@@ -11,7 +13,7 @@ import styles from "./CommentItem.module.scss";
 
 interface CommentItemProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
@@ -36,9 +38,14 @@ export const CommentItem = memo(function CommentItem({
     );
   }
 
+  if (!comment) return null;
+
   return (
     <div className={cls}>
-      <div className={styles.header}>
+      <AppLink
+        to={`${RoutePaths.profile}${comment.user.id}`}
+        className={styles.header}
+      >
         <Avatar
           size={30}
           src={
@@ -48,7 +55,7 @@ export const CommentItem = memo(function CommentItem({
         />
 
         <Text title={comment.user.username} />
-      </div>
+      </AppLink>
 
       <Text className={styles.text} text={comment.text} />
     </div>

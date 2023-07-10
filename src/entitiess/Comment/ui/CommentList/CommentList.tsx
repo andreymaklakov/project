@@ -23,6 +23,16 @@ export const CommentList = memo(function CommentList({
   const cls = classNames(styles.CommentList, {}, [className]);
   const { t } = useTranslation();
 
+  if (isLoading) {
+    return (
+      <div className={cls}>
+        <CommentItem className={styles.comment} isLoading />
+        <CommentItem className={styles.comment} isLoading />
+        <CommentItem className={styles.comment} isLoading />
+      </div>
+    );
+  }
+
   return (
     <div className={cls}>
       {comments.length ? (

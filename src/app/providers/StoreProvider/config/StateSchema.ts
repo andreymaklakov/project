@@ -13,6 +13,7 @@ import { UserSchema } from "entitiess/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { ArticleDetailsSchema } from "entitiess/Article";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import { AddCommentFormSchema } from "features/AddCommentForm";
 
 export interface StateSchema {
   user: UserSchema;
@@ -22,6 +23,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
+  addCommentForm?: AddCommentFormSchema;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
