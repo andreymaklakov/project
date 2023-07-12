@@ -4,5 +4,6 @@
   "Error occurred during loading article": "Произошла ошибка при загрузке статьи",
   "Comments": "Комментарии",
   "Read more": "Читать далее",
-  "Back": "Назад"
+  "Back": "Назад",
+  "Data fetch error please try one more time": "Ошибка получения данных, попробуйсе еще раз"
 }

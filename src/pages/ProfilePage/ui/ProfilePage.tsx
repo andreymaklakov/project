@@ -26,6 +26,7 @@ import {
 } from "entitiess/Profile";
 import { Countries } from "entitiess/Country";
 import { Currency } from "entitiess/Currency";
+import { Page } from "shared/ui/Page/Page";
 
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
@@ -130,7 +131,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = "" }) => {
 
   return (
     <DynamicModuleLoader reducer={initialReducers} removeAfterUnmount>
-      <div className={cls}>
+      <Page className={cls}>
         <ProfilePageHeader />
 
         {validateError?.length
@@ -157,7 +158,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className = "" }) => {
           onChangeCountry={handleChangeCountry}
           onChangeCurrency={handleChangeCurrency}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

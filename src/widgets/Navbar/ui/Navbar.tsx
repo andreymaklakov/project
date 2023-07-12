@@ -34,7 +34,7 @@ export const Navbar = memo(function Navbar({ className = "" }: NavbarProps) {
 
   if (userAuthData) {
     return (
-      <div className={cls}>
+      <header className={cls}>
         <Button
           variant={ButtonVariant.CLEAR_INVERTED}
           className={styles.links}
@@ -42,12 +42,12 @@ export const Navbar = memo(function Navbar({ className = "" }: NavbarProps) {
         >
           {t("Log Out")}
         </Button>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={cls}>
+    <header className={cls}>
       <Button
         variant={ButtonVariant.CLEAR_INVERTED}
         className={styles.links}
@@ -59,6 +59,6 @@ export const Navbar = memo(function Navbar({ className = "" }: NavbarProps) {
       {isOpenAuthModal ? (
         <LoginModal isOpen={isOpenAuthModal} onClose={toggleOpenModal} />
       ) : null}
-    </div>
+    </header>
   );
 });

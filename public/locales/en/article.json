@@ -4,5 +4,6 @@
   "Error occurred during loading article": "Error occurred during loading article",
   "Comments": "Comments",
   "Read more": "Read more",
-  "Back": "Back"
+  "Back": "Back",
+  "Data fetch error please try one more time": "Data fetch error, please try one more time"
 }

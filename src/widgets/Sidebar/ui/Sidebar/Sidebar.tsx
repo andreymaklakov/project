@@ -29,7 +29,7 @@ export const Sidebar = memo(function Sidebar({ className = "" }: SidebarProps) {
   ]);
 
   return (
-    <div data-testid="sidebar" className={cls}>
+    <menu data-testid="sidebar" className={cls}>
       <Button
         data-testid="sidebar-toggle"
         className={styles.collapseBtn}
@@ -52,6 +52,6 @@ export const Sidebar = memo(function Sidebar({ className = "" }: SidebarProps) {
 
         <LangSwitcher short={collapsed} className={styles.lang} />
       </div>
-    </div>
+    </menu>
   );
 });

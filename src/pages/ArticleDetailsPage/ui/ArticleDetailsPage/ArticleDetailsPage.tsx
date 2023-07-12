@@ -15,7 +15,7 @@ import { ArticleDetails } from "entitiess/Article";
 import { CommentList } from "entitiess/Comment";
 import { AddCommentForm } from "features/AddCommentForm";
 import { Button } from "shared/ui/Button/Button";
-import { RoutePaths } from "shared/config/routeConfig/routeConfig";
+import { Page } from "shared/ui/Page/Page";
 
 import {
   articleDetailsCommentsReducer,
@@ -61,15 +61,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   );
 
   const handleBack = useCallback(() => {
-    navigate(RoutePaths.articles);
+    navigate(-1);
   }, [navigate]);
 
   if (!id) {
-    return <div className={cls}>{t("Article not found")}</div>;
+    return <Page className={cls}>{t("Article not found")}</Page>;
   }
   return (
     <DynamicModuleLoader reducer={initialReducers} removeAfterUnmount>
-      <div className={cls}>
+      <Page className={cls}>
         <Button onClick={handleBack}>{t("Back")}</Button>
 
         <ArticleDetails id={id} />
@@ -79,7 +79,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
         <AddCommentForm onSendComment={handleSendComment} />
 
         <CommentList isLoading={isLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
