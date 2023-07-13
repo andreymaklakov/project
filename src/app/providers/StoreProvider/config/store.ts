@@ -4,22 +4,24 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { NavigateOptions, To } from "react-router-dom";
+// import { NavigateOptions, To } from "react-router-dom";
 
 import { userReducer } from "entitiess/User";
 import { API } from "shared/api/api";
 
 import { createReducerManager } from "./reducerManager";
 import { StateSchema } from "./StateSchema";
+import { scrollSaveReducer } from "features/ScrollSave";
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void
+  asyncReducers?: ReducersMapObject<StateSchema>
+  // navigate?: (to: To, options?: NavigateOptions) => void
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
+    scrollSave: scrollSaveReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
@@ -33,7 +35,7 @@ export function createReduxStore(
         thunk: {
           extraArgument: {
             api: API,
-            navigate,
+            // navigate,
           },
         },
       }),

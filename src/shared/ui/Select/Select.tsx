@@ -1,57 +1,74 @@
-import { ChangeEvent, memo, useCallback, useMemo } from "react";
+import {
+  ChangeEvent,
+  ComponentPropsWithoutRef,
+  FC,
+  memo,
+  useCallback,
+  useMemo,
+} from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 
 import styles from "./Select.module.scss";
 
-export interface SelectOption {
-  value: string;
+export interface SelectOption<T extends string> {
+  value: T;
   content: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string;
   label?: string;
-  options?: SelectOption[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: SelectOption<T>[];
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select = memo(function Select({
-  className,
-  label,
-  options,
-  value,
-  onChange,
-  readonly,
-}: SelectProps) {
-  const cls = classNames(styles.Select, {}, [className]);
+const typedMemo: <Component extends FC<any>>(
+  component: Component,
+  compare?: (
+    prevProps: ComponentPropsWithoutRef<Component>,
+    newProps: ComponentPropsWithoutRef<Component>
+  ) => boolean
+) => Component = memo;
 
-  const optionsList = useMemo(
-    () =>
-      options?.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.content}
-        </option>
-      )),
-    [options]
-  );
+export const Select = typedMemo(
+  <T extends string>({
+    className,
+    label,
+    options,
+    value,
+    onChange,
+    readonly,
+  }: SelectProps<T>) => {
+    const cls = classNames(styles.Select, {}, [className]);
 
-  const handleChange = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>) => {
-      onChange?.(e.target.value);
-    },
-    [onChange]
-  );
+    const optionsList = useMemo(
+      () =>
+        options?.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.content}
+          </option>
+        )),
+      [options]
+    );
 
-  return (
-    <div className={cls}>
-      {label ? <span className={styles.label}>{label + ">"}</span> : null}
+    const handleChange = useCallback(
+      (e: ChangeEvent<HTMLSelectElement>) => {
+        onChange?.(e.target.value as T);
+      },
+      [onChange]
+    );
 
-      <select disabled={readonly} value={value} onChange={handleChange}>
-        {optionsList}
-      </select>
-    </div>
-  );
-});
+    return (
+      <div className={cls}>
+        {label ? <span className={styles.label}>{label + ">"}</span> : null}
+
+        <select disabled={readonly} value={value} onChange={handleChange}>
+          {optionsList}
+        </select>
+      </div>
+    );
+  }
+);

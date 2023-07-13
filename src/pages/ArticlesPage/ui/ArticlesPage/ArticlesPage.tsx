@@ -1,37 +1,34 @@
 import { FC, memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
+import { ArticleList } from "entitiess/Article";
 import { classNames } from "shared/lib/classNames/classNames";
-import {
-  ArticleList,
-  ArticleView,
-  ArticleViewSelector,
-} from "entitiess/Article";
 import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Page } from "shared/ui/Page/Page";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { Page } from "widgets/Page/Page";
 import { Text, TextVariant } from "shared/ui/Text/Text";
 
 import {
-  articlesPageActions,
+  getArticlesPageError,
+  getArticlesPageInited,
+  getArticlesPageIsLoading,
+  getArticlesPageLimit,
+  getArticlesPageView,
+} from "../../model/selectors/articlePageSelectors";
+import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlePage/fetchNextArticlesPage";
+import {
   articlesPageReducer,
   getArticles,
 } from "../../model/slice/articlesPageSlice";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
-import {
-  getArticlesPageError,
-  getArticlesPageHasMore,
-  getArticlesPageIsLoading,
-  getArticlesPageLimit,
-  getArticlesPagePage,
-  getArticlesPageView,
-} from "../../model/selectors/articlePageSelectors";
-import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlePage/fetchNextArticlesPage";
+import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
+import { fetchInitialParams } from "../../model/services/fetchInitialParams/fetchInitialParams";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -56,29 +53,24 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   const articles = useSelector(getArticles.selectAll);
   const limit = useSelector(getArticlesPageLimit);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const handleLoadNextPage = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
+    dispatch(fetchInitialParams({ searchParams }));
   });
 
   useEffect(() => {
     if (__PROJECT__ !== "storybook") {
       if (articles.length <= 5) {
-        dispatch(fetchArticlesList({ page: 1 }));
+        dispatch(fetchArticlesList({}));
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [limit]);
-
-  const handleViewClick = useCallback(
-    (newView: ArticleView) => {
-      dispatch(articlesPageActions.setView(newView));
-    },
-    [dispatch]
-  );
 
   if (error) {
     return (
@@ -90,11 +82,20 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   }
 
   return (
-    <DynamicModuleLoader reducer={initialReducer}>
-      <Page onScrollEnd={handleLoadNextPage} className={cls}>
-        <ArticleViewSelector view={view} onViewClick={handleViewClick} />
+    <DynamicModuleLoader reducer={initialReducer} removeAfterUnmount={false}>
+      <Page
+        onScrollEnd={!isLoading ? handleLoadNextPage : undefined}
+        className={cls}
+        saveScroll
+      >
+        <ArticlePageFilters />
 
-        <ArticleList isLoading={isLoading} articles={articles} view={view} />
+        <ArticleList
+          className={styles.list}
+          isLoading={isLoading}
+          articles={articles}
+          view={view}
+        />
       </Page>
     </DynamicModuleLoader>
   );

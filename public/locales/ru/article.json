@@ -5,5 +5,17 @@
   "Comments": "Комментарии",
   "Read more": "Читать далее",
   "Back": "Назад",
-  "Data fetch error please try one more time": "Ошибка получения данных, попробуйсе еще раз"
+  "Data fetch error please try one more time": "Ошибка получения данных, попробуйсе еще раз",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск",
+  "by": "по",
+  "ascending": "возрастанию",
+  "descending": "убыванию",
+  "title": "названию",
+  "views": "просмотрам",
+  "date": "дате",
+  "All": "Все",
+  "Science": "Наука",
+  "Economics": "Экономика",
+  "Articles not found": "Статьи не найдены"
 }

@@ -2,6 +2,7 @@ import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { Text, TextSize } from "shared/ui/Text/Text";
 
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
@@ -29,7 +30,7 @@ export const ArticleList = memo(function ArticleList({
 }: ArticleListProps) {
   const cls = classNames(styles.ArticleList, {}, [className, styles[view]]);
 
-  const { t } = useTranslation();
+  const { t } = useTranslation("article");
 
   const renderArticle = useCallback(
     (article: Article) => {
@@ -37,6 +38,14 @@ export const ArticleList = memo(function ArticleList({
     },
     [view]
   );
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={cls}>
+        <Text size={TextSize.L} title={t("Articles not found")} />
+      </div>
+    );
+  }
 
   return (
     <div className={cls}>

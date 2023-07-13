@@ -15,7 +15,7 @@ import { ArticleDetails } from "entitiess/Article";
 import { CommentList } from "entitiess/Comment";
 import { AddCommentForm } from "features/AddCommentForm";
 import { Button } from "shared/ui/Button/Button";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 import {
   articleDetailsCommentsReducer,

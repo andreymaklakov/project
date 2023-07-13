@@ -26,7 +26,7 @@ import {
 } from "entitiess/Profile";
 import { Countries } from "entitiess/Country";
 import { Currency } from "entitiess/Currency";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 

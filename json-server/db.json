@@ -76,10 +76,10 @@
   "articles": [
     {
       "id": "1",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "ASnjdksnf jknsdfjks",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
+      "views": 10,
       "createdAt": "07.07.2023",
       "userId": "1",
       "type": ["IT"],
@@ -99,9 +99,9 @@
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
       "views": 1022,
-      "createdAt": "07.07.2023",
+      "createdAt": "07.07.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -114,13 +114,13 @@
     },
     {
       "id": "3",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "dsaghjky",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 102,
+      "createdAt": "03.07.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["IT", "SCIENCE", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -133,11 +133,11 @@
     },
     {
       "id": "4",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "defrgthjkyuli;p",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 2,
+      "createdAt": "07.05.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -152,11 +152,11 @@
     },
     {
       "id": "5",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "vjthgrfed",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 545,
+      "createdAt": "07.07.2003",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -171,13 +171,13 @@
     },
     {
       "id": "6",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "yrtsdrgsdhd",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 3433,
+      "createdAt": "05.03.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -190,11 +190,11 @@
     },
     {
       "id": "7",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "moijvuiehrv",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 444,
+      "createdAt": "03.03.2022",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -209,13 +209,13 @@
     },
     {
       "id": "8",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "moi;jafliunvkes",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
       "views": 1022,
-      "createdAt": "07.07.2023",
+      "createdAt": "07.05.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -228,13 +228,13 @@
     },
     {
       "id": "9",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "teyrujhgsfder",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 2222,
+      "createdAt": "09.07.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -247,13 +247,13 @@
     },
     {
       "id": "10",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "ertyuyiuoljkhgfd",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 12213,
+      "createdAt": "01.01.2021",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -266,11 +266,11 @@
     },
     {
       "id": "11",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "dfgutuyerfg",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 435,
+      "createdAt": "07.07.2013",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -285,13 +285,13 @@
     },
     {
       "id": "12",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "oiuytrewertghj",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 8654,
+      "createdAt": "22.10.2021",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -304,13 +304,13 @@
     },
     {
       "id": "13",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "yuoiyjhgfec",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 88,
+      "createdAt": "30.11.2018",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -323,13 +323,13 @@
     },
     {
       "id": "14",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "rtuyikjhgfed",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 454,
+      "createdAt": "12.07.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["SCIENCE", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -342,11 +342,11 @@
     },
     {
       "id": "15",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "rtuyikjhgfdw",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 676,
+      "createdAt": "07.04.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -361,11 +361,11 @@
     },
     {
       "id": "16",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "ertyuio",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 6,
+      "createdAt": "07.06.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -380,11 +380,11 @@
     },
     {
       "id": "17",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "rtyuihgfd",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 343,
+      "createdAt": "07.07.2013",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -399,11 +399,11 @@
     },
     {
       "id": "18",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "edftyujnb",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 33,
+      "createdAt": "07.03.2023",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -418,182 +418,11 @@
     },
     {
       "id": "19",
-      "title": "Hello world! Or Habr in English, v1.0",
+      "title": "fghjklikujyh",
       "subtitle": "What new in JS in 2022?",
       "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "20",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "21",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "22",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "23",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "24",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "25",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "26",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "27",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
-      "userId": "1",
-      "type": ["IT"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "paragraphs": [
-            "This is the first post in our blog in 2019. And this is important for all of us: we are finally launching the English version of Habr! Actually it was ready in the middle of December, but — you know — releasing a new feature right before Christmas is like deploying on Friday afternoon. So we decided to do it in the beginning of 2019."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "28",
-      "title": "Hello world! Or Habr in English, v1.0",
-      "subtitle": "What new in JS in 2022?",
-      "img": "https://softuni.org/wp-content/uploads/2022/08/ECMAScript2022-Featured-Image1.png",
-      "views": 1022,
-      "createdAt": "07.07.2023",
+      "views": 122,
+      "createdAt": "07.11.2013",
       "userId": "1",
       "type": ["IT"],
       "blocks": [

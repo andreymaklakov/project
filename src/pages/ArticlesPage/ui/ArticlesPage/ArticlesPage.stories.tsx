@@ -11,7 +11,7 @@ import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorato
 import ArticlesPage from "./ArticlesPage";
 
 const meta: Meta<typeof ArticlesPage> = {
-  title: "pages/ArticlesPage",
+  title: "pages/Article/ArticlesPage",
   component: ArticlesPage,
   tags: ["autodocs"],
   argTypes: {},
