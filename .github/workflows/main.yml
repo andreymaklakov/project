@@ -41,6 +41,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
+          registry-url: "https://registry.npmjs.org"
       - name: install modules
         run: npm ci --force
       - name: unit testing
@@ -59,6 +60,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
+          registry-url: "https://registry.npmjs.org"
       - name: install modules
         run: npm ci --force
       - name: linting typescript
@@ -77,6 +79,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
+          registry-url: "https://registry.npmjs.org"
       - name: install modules
         run: npm ci --force
       - name: linting css
@@ -95,6 +98,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
+          registry-url: "https://registry.npmjs.org"
       - name: install modules
         run: npm ci --force
       - name: build storybook
