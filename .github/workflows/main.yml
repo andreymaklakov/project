@@ -1,10 +1,12 @@
 name: Linting, testing , building
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
 jobs:
   build:
     runs-on: windows-latest
@@ -19,23 +21,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
+          registry-url: "https://registry.npmjs.org"
       - name: install modules
         run: npm ci --force
       - name: build production project
         run: npm run build:prod
-      # - name: linting typescript
-      #   run: npm run lint:ts
-      # - name: linting css
-      #   run: npm run lint:css
-      # - name: unit testing
-      #   run: npm run test:unit
-      # - name: build storybook
-      #   run: npm run storybook:build
-      # - name: screenshot testing
-      #   run: npm run test:ui:ci
 
   test_unit:
     runs-on: ubuntu-latest
+    # needs: build (if some previous action is needed for current action, it will wait)
     strategy:
       matrix:
         node-version: [18.x]
