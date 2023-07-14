@@ -16,7 +16,6 @@ import { Text, TextVariant } from "shared/ui/Text/Text";
 
 import {
   getArticlesPageError,
-  getArticlesPageInited,
   getArticlesPageIsLoading,
   getArticlesPageLimit,
   getArticlesPageView,
@@ -53,7 +52,7 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   const articles = useSelector(getArticles.selectAll);
   const limit = useSelector(getArticlesPageLimit);
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const handleLoadNextPage = useCallback(() => {
     dispatch(fetchNextArticlesPage());
