@@ -13,8 +13,7 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - name: Get repoitory code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Staring Node.js @{{matrix.node-version}}
         uses: actions/setup-node@v1
         with:
@@ -23,87 +22,19 @@ jobs:
         run: npm ci --force
       - name: build production project
         run: npm run build:prod
+        if: always()
       - name: linting typescript
         run: npm run lint:ts
+        if: always()
       - name: linting css
         run: npm run lint:css
+        if: always()
       - name: unit testing
         run: npm run test:unit
+        if: always()
       - name: build storybook
         run: npm run storybook:build
+        if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
-
-  # test_unit:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
-
-  #   steps:
-  #     - name: Get repoitory code
-  #       uses: actions/checkout@v2
-  #     - name: Staring Node.js @{{matrix.node-version}}
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: ${{matrix.node-version}}
-  #     - name: install modules
-  #       run: npm ci --force
-  #     - name: unit testing
-  #       run: npm run test:unit
-
-  # lint_ts:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
-
-  #   steps:
-  #     - name: Get repoitory code
-  #       uses: actions/checkout@v2
-  #     - name: Staring Node.js @{{matrix.node-version}}
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: ${{matrix.node-version}}
-  #     - name: install modules
-  #       run: npm ci --force
-  #     - name: linting typescript
-  #       run: npm run lint:ts
-
-  # lint_css:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
-
-  #   steps:
-  #     - name: Get repoitory code
-  #       uses: actions/checkout@v2
-  #     - name: Staring Node.js @{{matrix.node-version}}
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: ${{matrix.node-version}}
-  #     - name: install modules
-  #       run: npm ci --force
-  #     - name: linting css
-  #       run: npm run lint:css
-
-  # test_screenshot:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x]
-
-  #   steps:
-  #     - name: Get repoitory code
-  #       uses: actions/checkout@v2
-  #     - name: Staring Node.js @{{matrix.node-version}}
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: ${{matrix.node-version}}
-  #     - name: install modules
-  #       run: npm ci --force
-  #     - name: build storybook
-  #       run: npm run storybook:build
-  #     - name: screenshot testing
-  #       run: npm run test:ui:ci
+        if: always()
